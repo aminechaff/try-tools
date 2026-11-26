@@ -1,0 +1,23 @@
+# Exemple de périmètre d'audit Try_Tools.
+# Copier en config/scope.local.yaml (ignoré par git) et adapter.
+# Par défaut, seules les cibles de laboratoire sont acceptées.
+
+owner: "Porteur du projet (lab personnel)"
+
+# Liste d'autorisation : AUCUNE cible hors de cette liste ne sera testée.
+targets:
+  - "127.0.0.1"          # boucle locale
+  - "localhost"
+
+# Cibles ou routes à ne jamais tester, même si listées ailleurs.
+exclusions: []
+
+# Doit rester false tant qu'aucune cible publique n'est légitimement mandatée.
+allow_public: false
+
+# Obligatoire UNIQUEMENT pour une cible publique (sinon peut être omis).
+# authorization:
+#   reference: "Mandat écrit n°..."
+#   granted_by: "Propriétaire du système"
+#   valid_from: 2026-01-01
+#   valid_until: 2026-12-31
